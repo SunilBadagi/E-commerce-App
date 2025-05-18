@@ -16,11 +16,14 @@ connectDB()
 connectCloudinary()
 
 //middlewares
-app.use(express.json())
 app.use(cors({
-  origin: 'https://e-commerce-app-1-nkm9.onrender.com', // 🔁 Replace with actual frontend Render URL
+  origin: [
+    'https://e-commerce-app-1-nkm9.onrender.com',
+    'https://e-commerce-app-2-i8hq.onrender.com'
+  ],
   credentials: true
 }));
+
 
 //api endpoints
 app.use('/api/user',userRouter)
