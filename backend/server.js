@@ -17,7 +17,10 @@ connectCloudinary()
 
 //middlewares
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+  origin: 'https://e-commerce-app-1-nkm9.onrender.com/', // 🔁 Replace with actual frontend Render URL
+  credentials: true
+}));
 
 //api endpoints
 app.use('/api/user',userRouter)
